@@ -1,6 +1,8 @@
 **FDP MANAGEMENT SYSTEM**
+
 A web-based system to manage and track Faculty Development Programme (FDP) records efficiently.  
 It supports role-based access, automated text extraction from uploaded certificates, and search functionality for academic data management.
+
 **FEATURES**
 - User registration, login, and password recovery via email  
 - Role-based access (Admin/User)  
@@ -11,12 +13,14 @@ It supports role-based access, automated text extraction from uploaded certifica
 - Admin access for upload and login history tracking  
 
 **TECH STACK**
+
 Frontend: HTML, CSS, JavaScript  
 Backend: Python (Flask)  
 Database: SQLite  
 Libraries: Pandas, pytesseract, datetime  
 
 **INSTALLATION**
+
 1. **CLONE THE REPOSITORY**
    ```bash
    git clone https://github.com/ARADHYA-M/Fdp_Management_System.git
@@ -43,12 +47,14 @@ Libraries: Pandas, pytesseract, datetime
    ```
 
 **DATABASE TABLES**
+
 - users – stores user details and roles  
 - login_history – tracks login/logout times  
 - fdp_attended,fdp_conducted,conference_attended,conference_conducted,lecture_conducted – store extracted FDP data  
 - extracted_data – saves extracted certificate text  
 
 **ADMIN ACCESS**
+
 - View all uploaded certificates  
 - Monitor user login/logout history  
 - Manage all FDP records  
