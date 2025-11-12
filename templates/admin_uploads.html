@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Admin: View Uploaded Files by Staff ID</h3>
+<form method="post">
+    <div class="mb-3">
+        <label>Staff ID:</label>
+        <input type="text" name="staffid" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">View Uploads</button>
+</form>
+
+{% if uploads %}
+<hr>
+<h4>Uploaded Files for {{ requested_staffid }}</h4>
+<ul>
+    {% for u in uploads %}
+    <li>{{ u.date }} - {{ u.name }} - {{ u.certificate_type }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Search Your Queries Here</h3>
+<form method="post">
+    <div class="mb-3">
+        <label>Programme Category:</label>
+        <select name="category" class="form-control">
+            <option value="fdp_attended">FDP Attended</option>
+            <option value="fdp_conducted">FDP Conducted</option>
+            <option value="conference_attended">Conference Attended</option>
+            <option value="conference_conducted">Conference Conducted</option>
+            <option value="lecture_conducted">Lecture Conducted</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Start Date:</label>
+        <input type="date" name="start_date" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>End Date:</label>
+        <input type="date" name="end_date" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <button type="submit" name="action" value="search" class="btn btn-primary">Search</button>
+    <button type="submit" name="action" value="export" class="btn btn-success">Export CSV</button>
+</form>
+
+{% if results %}
+<hr>
+<h4>Search Results</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th><th>Designation</th><th>Department</th><th>Programme</th>
+            <th>From</th><th>To</th><th>Organizer</th><th>Sponsor</th><th>Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.designation }}</td>
+            <td>{{ r.department }}</td>
+            <td>{{ r.programme_attended }}</td>
+            <td>{{ r.from_date }}</td>
+            <td>{{ r.to_date }}</td>
+            <td>{{ r.organizer }}</td>
+            <td>{{ r.sponsor }}</td>
+            <td>{{ r.no_of_days }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}

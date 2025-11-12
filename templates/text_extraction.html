@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Upload File to Extract Text</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="file" name="file" class="form-control" accept=".jpg,.jpeg" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload and Extract</button>
+    </form>
+</div>
+{% endblock %}

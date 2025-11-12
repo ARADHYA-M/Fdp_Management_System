@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h3>Welcome, {{ name }} ({{ staffid }})</h3>
+    <p>Login Time: {{ login_time }}</p>
+    <p>Select an option below:</p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{{ url_for('upload') }}" class="btn btn-primary m-2">Upload Certificate</a>
+        <a href="{{ url_for('text_extraction') }}" class="btn btn-primary m-2">Text Extraction</a>
+        <a href="{{ url_for('search') }}" class="btn btn-primary m-2">Search Query</a>
+        <a href="{{ url_for('profile') }}" class="btn btn-primary m-2">View/Edit Profile</a>
+
+        {% if session.get('user_role') == 'admin' %}
+        <a href="{{ url_for('view_all_uploads') }}" class="btn btn-info mt-2">View All Uploads</a>
+        <a href="{{ url_for('history') }}" class="btn btn-warning m-2">View Login History</a>
+        {% endif %}
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger m-2">Logout</a>
+
+    </div>
+</div>
+{% endblock %}

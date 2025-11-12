@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Upload FDP Certificate</h3>
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Select Certificate Image (.jpg, .jpeg):</label>
+        <input type="file" name="file" class="form-control" accept=".jpg,.jpeg" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Extract</button>
+</form>
+
+<hr>
+<h4>View All Uploaded Files</h4>
+<a href="{{ url_for('view_uploads') }}" class="btn btn-secondary">View Uploaded Files</a>
+{% endblock %}

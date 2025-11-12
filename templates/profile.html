@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>View / Update Profile</h3>
+<form method="post">
+    <div class="mb-3">
+        <label>Staff ID:</label>
+        <input type="text" class="form-control" value="{{ user.staffid }}" readonly>
+    </div>
+    <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" value="{{ user.name }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" value="{{ user.email }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Contact Number:</label>
+        <input type="text" name="contact_number" class="form-control" value="{{ user.contact_number }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Designation:</label>
+        <input type="text" name="designation" class="form-control" value="{{ user.designation }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Institution:</label>
+        <input type="text" name="institution" class="form-control" value="{{ user.institution }}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Update Profile</button>
+</form>
+{% endblock %}

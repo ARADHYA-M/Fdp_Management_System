@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h3>Your Uploaded FDP Records</h3>
+
+{% if uploads %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Programme Attended</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>No. of Days</th>
+            <th>Organizer</th>
+            <th>Sponsor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for upload in uploads %}
+        <tr>
+            <td>{{ upload.id }}</td>
+            <td>{{ upload.programme_attended }}</td>
+            <td>{{ upload.designation }}</td>
+            <td>{{ upload.department }}</td>
+            <td>{{ upload.from_date }}</td>
+            <td>{{ upload.to_date }}</td>
+            <td>{{ upload.no_of_days }}</td>
+            <td>{{ upload.organizer }}</td>
+            <td>{{ upload.sponsor }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No FDP uploads found.</p>
+{% endif %}
+{% endblock %}
